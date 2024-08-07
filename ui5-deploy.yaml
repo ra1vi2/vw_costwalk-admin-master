@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.5"
+metadata:
+  name: manage.cw.admin.cwadmin
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: n1t_010_PP
+          url: http://n1t.onprem:1234
+        app:
+          name: /VWK/NLP_CWADMIN
+          description: CWADMIN
+          package: /VWK/NLP_COSTWALK
+          transport: N1TK929188

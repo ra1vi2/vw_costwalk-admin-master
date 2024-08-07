@@ -1,0 +1,72 @@
+<mvc:View controllerName="manage.cw.admin.costwalkadmin.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" displayBlock="true"
+    xmlns="sap.m">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}" class="sapUiResponsivePadding" >
+                    <content>
+                        <Table id="_id1" headerText="{i18n>CostGroupColor}" items="{path: '/CWADMIN' }">
+                            <columns>
+                                <Column width="8rem">
+                                    <Text text="{i18n>Costgroup}"/>
+                                </Column>
+                                <Column width="8rem">
+                                    <Text text="{i18n>Bartype}"/>
+                                </Column>
+                                <Column width="8rem">
+                                    <Text text="{i18n>Color}"/>
+                                </Column>
+                                <Column width="8rem">
+                                    <Text text="{i18n>Selectedcolor}"/>
+                                </Column> 
+                                <!-- Begin of <<SPrint no.- 52>> <<NLS-6284>> <<Additional fields in Cost Walk Administration App <<AB5GXLM >> -->
+                                <Column width="8rem">
+                                    <Text text="{i18n>Lastchangedbyuser}"/>
+                                </Column>
+                                <Column width="8rem">
+                                    <Text text="{i18n>Lastchangedatetime}"/>
+                                </Column>
+                                <!-- End of <<SPrint no.- 52>> <<NLS-6284>> <<Additional fields in Cost Walk Administration App <<AB5GXLM >> -->
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Label text='{Costgroup}'/>
+                                        <Select selectedKey='{Bartype}' forceSelection="true" editable="false" >
+                                            <core:Item key="S" text="{i18n>Step}"></core:Item>
+                                            <core:Item key="F" text="{i18n>Full}"></core:Item>
+                                        </Select>
+                                        <Button press="_colorSelection" icon="sap-icon://palette" ariaHasPopup="Dialog" tooltip="{i18n>ColorPalette}"/>
+                                        <Label text='{Color}'/>
+                                        <!-- Begin of <<SPrint no.- 52>> <<NLS-6284>> <<Additional fields in Cost Walk Administration App <<AB5GXLM >> -->
+                                        <Label text='{Lastchangedbyuser}'/>
+                                        <Label text='{Lastchangedatetime}'/>
+                                        <!-- End of <<SPrint no.- 52>> <<NLS-6284>> <<Additional fields in Cost Walk Administration App <<AB5GXLM >> -->
+
+                                    </cells>
+                                </ColumnListItem>
+
+                                <!-- <ColumnListItem>
+                                <Label text='Material'/>
+                                <Button press="_colorSelection" icon="sap-icon://palette" ariaHasPopup="Dialog"/>
+                            </ColumnListItem>
+                            <ColumnListItem>
+                                <Label text='Currency'/>
+                                <Button press="_colorSelection" icon="sap-icon://palette" ariaHasPopup="Dialog"/>
+                            </ColumnListItem>
+                            <ColumnListItem>
+                                <Label text='Logistics'/>
+                                <Button press="_colorSelection" icon="sap-icon://palette" ariaHasPopup="Dialog"/> -->
+                                <!-- </ColumnListItem> -->
+                            </items>
+                        </Table>
+
+
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
